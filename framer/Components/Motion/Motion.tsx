@@ -4,7 +4,7 @@ import React from 'react'
 import { motion, useScroll } from "framer-motion";
 import { reverse } from 'dns';
 const gridVariantsContainer = { hidden: { opacity: 0 }, show: { opacity: 1, transition: { staggerChildren: 0.25 } } }
-const gridSquareVariants = { hidden: { opacity: 0 }, show: { opacity: 1 } }
+// const gridSquareVariants = { hidden: { opacity: 0 }, show: { opacity: 1 } }
 
 const SVGIconsVariants = {
     hidden: {
@@ -18,18 +18,32 @@ const SVGIconsVariants = {
         fill: "rgba(252,211,77,1)",
     }
 }
-const Motion = () => {
+const Motion = () => {                   
 
     const { scrollYProgress: completionProgress } = useScroll();
+    
     return (
-        <div className='flex flex-col gap-10 overflow-x-hidden'>
+        <div className=' grid grid-cols-2 relative'>
+
+            <section className=' flex justify-center items-center h-screen bg-orange-400  sticky top-0 bottom-0
+             '>
+
+                awwwawaw
+            </section>
             <motion.section
                 variants={gridVariantsContainer}
 
                 initial="hidden"
                 animate="show"
-                className='grid grid-cols-3 gap-10 p-10 '>
-                <motion.div variants={gridSquareVariants} className='bg-slate-500 rounded-lg aspect-square justify-center flex items-center gap-10'>
+                className='gap-10 flex flex-col  p-10   w-[70%]  '
+                >
+                <motion.div 
+                initial={{opacity:0}}
+                whileInView={{opacity:1}}
+                viewport={{amount:"all"}}
+                // viewport={{}}
+                // variants={gridSquareVariants}
+                 className='bg-slate-500 rounded-lg aspect-square justify-center flex items-center gap-10 '>
 
                     <motion.div
                         initial={{ opacity: 0, y: 100 }}
@@ -49,7 +63,12 @@ const Motion = () => {
                 </motion.div>
 
                 {/* //transform 1 keyframes to another */}
-                <motion.div variants={gridSquareVariants} className='bg-slate-500 rounded-lg aspect-square justify-center flex items-center gap-10'>
+                <motion.div
+                //  variants={gridSquareVariants}
+                initial={{opacity:0}}
+                whileInView={{opacity:1}}
+                viewport={{amount:"all"}}
+                className='bg-slate-500 rounded-lg aspect-square justify-center flex items-center gap-10'>
                     <motion.div className='w-1/3 h-1/3 bg-rose-500 shadow-md'
                         animate={{
                             scale: [1, 2, 2, 1],
@@ -71,12 +90,22 @@ const Motion = () => {
                 </motion.div>
 
 
-                <motion.div variants={gridSquareVariants} className='bg-slate-500 rounded-lg aspect-square justify-center flex items-center gap-10'>
+                <motion.div 
+                // variants={gridSquareVariants}
+                initial={{opacity:0}}
+                whileInView={{opacity:1}}
+                viewport={{amount:"all"}}
+                 className='bg-slate-500 rounded-lg aspect-square justify-center flex items-center gap-10'>
 
                     <motion.button whileTap={{ scale: 0.9 }} whileHover={{ scale: 1.1, backgroundColor: "#d1d5db", color: "black" }} transition={{ bounceDamping: 10, bounceStiffness: 600 }} className='w-1/2 py-5 bg-emerald-600 text-2xl  text-gray-100 font-light tracking-wide'>Subscribe</motion.button>
                 </motion.div>
                 {/* Drag and Drop */}
-                <motion.div variants={gridSquareVariants} className='bg-slate-500 rounded-lg aspect-square justify-center flex items-center gap-10'>
+                <motion.div 
+                // variants={gridSquareVariants}
+                initial={{opacity:0}}
+                whileInView={{opacity:1}}
+                viewport={{amount:"all"}}
+                className='bg-slate-500 rounded-lg aspect-square justify-center flex items-center gap-10'>
 
                     <motion.div className='w-1/3 h-1/3 bg-orange-500 rounded-3xl cursor-grab'
                         drag
@@ -90,7 +119,12 @@ const Motion = () => {
                 </motion.div>
 
                 {/* animation scrolling? */}
-                <motion.div variants={gridSquareVariants} className='bg-slate-500 rounded-lg aspect-square justify-center flex items-center gap-10'>
+                <motion.div
+                //  variants={gridSquareVariants}
+                initial={{opacity:0}}
+                whileInView={{opacity:1}}
+                viewport={{amount:"all"}}
+                  className='bg-slate-500 rounded-lg aspect-square justify-center flex items-center gap-10'>
 
                     <motion.div className='w-40 aspect-square rounded-xl bg-gray-50/20'>
                         <motion.div className='w-full h-full rounded-lg bg-gray-900 origin-bottom' style={{ scaleY: completionProgress }} />
@@ -99,7 +133,13 @@ const Motion = () => {
                 </motion.div>
 
                 {/* SVG Animations */}
-                <motion.div variants={gridSquareVariants} className='bg-slate-500 rounded-lg aspect-square justify-center flex items-center gap-10'>
+                <motion.div 
+                // variants={gridSquareVariants} 
+                initial={{opacity:0}}
+                whileInView={{opacity:1}}
+                viewport={{amount:"all"}}
+
+                className='bg-slate-500 rounded-lg aspect-square justify-center flex items-center gap-10'>
                     <motion.svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
